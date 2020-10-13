@@ -80,7 +80,7 @@ For this assignment the commands are:
 This project use pyqtgraph as GUI tool so you need to make sure your computer support these requirements.
 
 - Python 2.7, or 3.x
-- PyQt 4.8+, PySide, PyQt5, or PySide2
+- PyQt 4.8+/PySide/PyQt5/PySide2
 - numpy
 
 It's convienient for you to install the last two package using pip
