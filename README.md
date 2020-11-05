@@ -54,7 +54,18 @@ It's not neccessary to install pyqtgraph since this repository include its libra
 ## System Model Feature
 
 - actual value decay
-- delay
+- delay: 0.3s (it means the time of the system to respond the controller output(i.e. system input))
+- Plot refresh / Data collection / Controller update rate: 100Hz
+
+> As to the problem of sensitivity of the system(retrieved from last announcement in tutorial group)
+>
+> - Some people reported exploding output for PID assignment. That is because our simulation responds very sensitive to inputs. i.e. a bit big input will explodes the output.
+> - You need to set the parameter p low, typically 3.
+> - Or if you want the model not so sensitive, then go to file [`Model.py`](https://github.com/LIANG-SN/PID-Control-Model/blob/main/Model.py) and you will see a parameter self.k2 (line 9). Multiply this value by 1e-2 or 1e-3 (i.e. k2 = 0.000001 or smaller). By that, the model will less likely to explode and you are able to test with higher value of p.
+
+> Extra note:
+> - Click the left bottom of the graph will enable auto range(y range) unless the value get out of control.
+> - Note that you can modify the whole `PID.py` file, it means if you need some non-local variable, you may declare it in the class
 
 Understand the feature of the system may be helpful when you tune the parameters.
 
